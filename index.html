@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>化學治療期間飲食照顧 ｜ 馬偕兒童醫院 十一病房</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  /* ===== LINE Seed TW（繁體中文版）=====
+     LINE Seed 繁中版沒有公開的 webfont CDN，需自架字型檔：
+     1. 至官網 seed.line.me 免費下載「LINE Seed 繁體中文版」
+     2. 將字型檔轉成 woff2（建議用 fonttools 的 woff2 或線上轉檔）
+     3. 命名為下列檔名，放到與本 HTML「同一層」的 fonts/ 資料夾
+     （檔名只要與下方一致即可；放上 host 後自動生效，預覽環境因無字型檔會顯示 fallback）*/
+  @font-face{font-family:'LINE Seed TW';src:url('fonts/LINESeedTW_Rg.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap;}
+  @font-face{font-family:'LINE Seed TW';src:url('fonts/LINESeedTW_Bd.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap;}
+  @font-face{font-family:'LINE Seed TW';src:url('fonts/LINESeedTW_Eb.woff2') format('woff2');font-weight:800;font-style:normal;font-display:swap;}
+
+  :root{
+    --font:'LINE Seed TW','Noto Sans TC',-apple-system,BlinkMacSystemFont,'PingFang TC','Microsoft JhengHei','Heiti TC',sans-serif;
+    --paper:#f6f8f1;
+    --surface:#ffffff;
+    --ink:#22302a;
+    --ink-soft:#566159;
+    --ink-faint:#8b948c;
+    --line:#e4e9dd;
+    --line-soft:#eef2e8;
+
+    --brand:#3f7d3f;
+    --brand-deep:#2a5530;
+    --brand-bright:#82bb3f;
+
+    --ok:#1f8a4c;        --ok-bg:#e7f4ea;   --ok-line:#bfe2c8;
+    --warn:#b07410;      --warn-bg:#fbf2df;  --warn-line:#ecd9a8;
+    --no:#c0392b;        --no-bg:#fbe9e6;    --no-line:#f0cabf;
+    --danger:#a31515;
+
+    --radius:18px;
+    --shadow-sm:0 1px 2px rgba(34,48,42,.04), 0 2px 8px rgba(34,48,42,.05);
+    --shadow-md:0 6px 22px rgba(34,48,42,.08);
+    --maxw:880px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--font);
+    font-size:16.5px;
+    line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+    letter-spacing:.01em;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    overflow:hidden;
+    background:
+      radial-gradient(120% 140% at 85% -10%, rgba(130,187,63,.55) 0%, rgba(130,187,63,0) 55%),
+      linear-gradient(135deg,#357036 0%, #4a8b3a 55%, #6aa83e 100%);
+    color:#fff;
+    padding:58px 0 64px;
+  }
+  .hero::after{
+    content:"";position:absolute;left:0;right:0;bottom:-1px;height:42px;
+    background:var(--paper);
+    border-radius:50% 50% 0 0 / 100% 100% 0 0;
+    transform:scaleX(1.6);
+  }
+  .hero .wrap{position:relative;z-index:2;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;
+    font-size:13.5px;font-weight:700;letter-spacing:.14em;
+    background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.32);
+    padding:7px 15px;border-radius:999px;
+    backdrop-filter:blur(2px);
+  }
+  .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:#eaff9e;box-shadow:0 0 0 3px rgba(234,255,158,.3);}
+  h1{
+    font-family:var(--font);
+    font-weight:800;
+    font-size:clamp(30px,6vw,46px);
+    line-height:1.25;
+    margin:22px 0 14px;
+    letter-spacing:.02em;
+    text-shadow:0 2px 14px rgba(0,0,0,.12);
+  }
+  .hero .lead{
+    font-size:clamp(16px,2.4vw,18.5px);
+    max-width:34em;
+    margin:0 0 22px;
+    color:rgba(255,255,255,.94);
+    line-height:1.8;
+  }
+  .ward{
+    display:inline-block;font-size:14px;font-weight:400;
+    color:rgba(255,255,255,.9);
+    border-top:1px solid rgba(255,255,255,.28);
+    padding-top:14px;
+  }
+  .ward b{font-weight:700;}
+
+  /* ---------- INTRO CALLOUT ---------- */
+  main{padding-bottom:30px;}
+  .callout{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-left:5px solid var(--brand);
+    border-radius:var(--radius);
+    padding:22px 24px;
+    margin:-26px auto 38px;
+    box-shadow:var(--shadow-md);
+    position:relative;z-index:5;
+  }
+  .callout h3{margin:0 0 8px;font-size:16px;font-family:var(--font);font-weight:700;color:var(--brand-deep);}
+  .callout p{margin:0;color:var(--ink-soft);font-size:15px;line-height:1.8;}
+  .callout .phone{
+    display:inline-flex;align-items:center;gap:8px;margin-top:14px;
+    font-weight:700;color:var(--brand-deep);background:var(--line-soft);
+    padding:8px 14px;border-radius:10px;font-size:15px;text-decoration:none;
+  }
+
+  /* ---------- SECTION SHELL ---------- */
+  .section-title{
+    font-family:var(--font);font-weight:800;
+    font-size:clamp(20px,3vw,25px);
+    color:var(--brand-deep);
+    margin:54px 0 18px;
+    display:flex;align-items:center;gap:14px;
+    letter-spacing:.02em;
+  }
+  .section-title .badge{
+    flex:0 0 auto;
+    width:40px;height:40px;border-radius:12px;
+    display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,var(--brand) 0%,var(--brand-bright) 100%);
+    color:#fff;font-family:var(--font);font-weight:800;font-size:16px;
+    box-shadow:0 4px 12px rgba(63,125,63,.28);
+  }
+  .section-sub{color:var(--ink-faint);font-size:14.5px;margin:-8px 0 18px 54px;}
+
+  /* ---------- ITEM LIST ---------- */
+  .card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow-sm);
+    overflow:hidden;
+  }
+  ul.items{list-style:none;margin:0;padding:0;}
+  ul.items li{
+    display:flex;gap:14px;
+    padding:16px 22px;
+    border-bottom:1px solid var(--line-soft);
+  }
+  ul.items li:last-child{border-bottom:none;}
+  .mark{
+    flex:0 0 auto;
+    width:26px;height:26px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:15px;font-weight:800;line-height:1;margin-top:3px;
+    font-family:var(--font);
+  }
+  .ok  .mark{background:var(--ok-bg);color:var(--ok);border:1px solid var(--ok-line);}
+  .warn .mark{background:var(--warn-bg);color:var(--warn);border:1px solid var(--warn-line);}
+  .no  .mark{background:var(--no-bg);color:var(--no);border:1px solid var(--no-line);}
+  .item-body{flex:1 1 auto;}
+  .item-body p{margin:0;}
+  .item-body .t{font-size:16px;line-height:1.75;color:var(--ink);}
+  .item-body .t b{font-weight:700;}
+  .item-body .note{
+    margin-top:5px;font-size:14px;color:var(--ink-soft);line-height:1.7;
+    padding-left:12px;border-left:2px solid var(--line);
+  }
+  .kw-no{color:var(--no);font-weight:700;}
+  .kw-ok{color:var(--ok);font-weight:700;}
+
+  /* ---------- SUMMARY (核心原則) ---------- */
+  .summary-band{
+    background:linear-gradient(180deg,#ffffff 0%, #fbfdf7 100%);
+    border:1px solid var(--line);
+    border-radius:26px;
+    padding:30px 26px 32px;
+    margin:0 auto 30px;
+    box-shadow:var(--shadow-md);
+  }
+  .summary-band .h{
+    text-align:center;margin:0 0 4px;
+    font-family:var(--font);font-weight:800;font-size:22px;color:var(--brand-deep);
+  }
+  .summary-band .sub{text-align:center;color:var(--ink-faint);font-size:14px;margin:0 0 24px;}
+  .principles{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;
+  }
+  .pr{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:18px 16px;
+    text-align:center;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .pr:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
+  .pr .n{
+    width:34px;height:34px;margin:0 auto 12px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    background:var(--brand-deep);color:#fff;font-weight:800;font-size:15px;
+  }
+  .pr h4{margin:0 0 6px;font-family:var(--font);font-size:17px;color:var(--brand-deep);font-weight:700;letter-spacing:.03em;}
+  .pr p{margin:0;font-size:13.5px;color:var(--ink-soft);line-height:1.65;}
+
+  /* ---------- LEGEND ---------- */
+  .legend{
+    display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:center;
+    background:var(--line-soft);
+    border-radius:14px;padding:14px 18px;margin:0 auto 14px;
+    font-size:14px;color:var(--ink-soft);
+  }
+  .legend span{display:inline-flex;align-items:center;gap:8px;}
+  .lg{width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;}
+
+  /* ---------- TOC ---------- */
+  nav.toc{
+    display:flex;flex-wrap:wrap;gap:9px;justify-content:center;
+    margin:0 auto 6px;padding:4px 0;
+  }
+  nav.toc a{
+    text-decoration:none;color:var(--brand-deep);
+    background:var(--surface);border:1px solid var(--line);
+    padding:7px 14px;border-radius:999px;font-size:14px;font-weight:700;
+    transition:all .2s ease;
+  }
+  nav.toc a:hover{background:var(--brand);color:#fff;border-color:var(--brand);}
+
+  section[id]{scroll-margin-top:18px;}
+
+  /* ---------- DANGER ZONE ---------- */
+  .danger-zone .card{border-color:var(--no-line);}
+  .alert{
+    background:linear-gradient(135deg,#fbeae7 0%, #fdf4f2 100%);
+    border:1.5px solid var(--no-line);
+    border-left:6px solid var(--danger);
+    border-radius:var(--radius);
+    padding:22px 24px;
+    margin-top:18px;
+    box-shadow:0 6px 20px rgba(163,21,21,.08);
+  }
+  .alert .tag{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--danger);color:#fff;font-weight:800;font-size:13.5px;
+    padding:5px 13px;border-radius:999px;letter-spacing:.06em;
+  }
+  .alert h4{margin:13px 0 6px;font-family:var(--font);font-size:18px;color:var(--danger);font-weight:800;}
+  .alert p{margin:0;font-size:15px;color:#7a1f1a;line-height:1.8;}
+
+  /* ---------- RECOVERY / CONTACT ---------- */
+  .recovery{
+    background:linear-gradient(135deg,#2a5530 0%, #4a8b3a 100%);
+    color:#fff;border-radius:24px;padding:32px 28px;margin-top:24px;
+    box-shadow:var(--shadow-md);
+  }
+  .recovery h3{margin:0 0 14px;font-family:var(--font);font-size:20px;font-weight:800;}
+  .recovery p{margin:0 0 14px;color:rgba(255,255,255,.94);font-size:15.5px;line-height:1.85;}
+  .recovery .contact{
+    display:inline-flex;align-items:center;gap:10px;
+    background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);
+    padding:12px 20px;border-radius:14px;font-weight:700;font-size:17px;color:#fff;text-decoration:none;
+    letter-spacing:.02em;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    text-align:center;padding:36px 20px 46px;color:var(--ink-faint);
+  }
+  footer .care{
+    font-family:var(--font);font-size:18px;color:var(--brand-deep);font-weight:700;
+    margin:0 0 8px;letter-spacing:.04em;
+  }
+  footer small{font-size:13px;color:var(--ink-faint);}
+  .top-link{
+    display:inline-block;margin-top:16px;font-size:13.5px;color:var(--brand);
+    text-decoration:none;border:1px solid var(--line);padding:6px 16px;border-radius:999px;
+  }
+  .top-link:hover{background:var(--brand);color:#fff;border-color:var(--brand);}
+
+  /* ---------- ENTRANCE MOTION ---------- */
+  @keyframes rise{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
+  .hero .wrap>*{animation:rise .7s both;}
+  .hero .eyebrow{animation-delay:.05s;}
+  .hero h1{animation-delay:.15s;}
+  .hero .lead{animation-delay:.28s;}
+  .hero .ward{animation-delay:.4s;}
+  .summary-band{animation:rise .8s .1s both;}
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;}
+    html{scroll-behavior:auto;}
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:560px){
+    body{font-size:16px;}
+    .wrap{padding:0 16px;}
+    ul.items li{padding:14px 16px;}
+    .section-sub{margin-left:0;}
+    .callout{padding:18px 18px;}
+  }
+
+  /* ---------- PRINT ---------- */
+  @media print{
+    body{background:#fff;font-size:12pt;}
+    .hero{background:#fff!important;color:#000;padding:0 0 10px;border-bottom:2px solid #2a5530;}
+    .hero::after{display:none;}
+    .hero h1,.section-title,.summary-band .h{color:#000!important;text-shadow:none;}
+    .eyebrow,nav.toc,.top-link,.pr:hover{display:initial;}
+    nav.toc,.top-link{display:none;}
+    .recovery,.summary-band,.callout,.card,.alert{box-shadow:none;break-inside:avoid;}
+    .recovery{background:#f2f2f2!important;color:#000;}
+    .recovery h3,.recovery p,.recovery .contact{color:#000!important;}
+    .section-title .badge,.pr .n{background:#444!important;}
+  }
+</style>
+</head>
+<body>
+<a id="top"></a>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow"><span class="dot"></span>馬偕兒童醫院　MacKay Children's Hospital</span>
+    <h1>化學治療期間<br>飲食照顧指南</h1>
+    <p class="lead">當孩子接受化學治療、幹細胞移植或處於免疫抑制階段時，白血球（尤其是顆粒球）會降得非常低，極易受到感染。飲食採取較嚴格的限制，盡可能減少食物中的微生物，是保護抵抗力較弱孩子的重要一環。</p>
+    <span class="ward">本資料由 <b>馬偕兒童醫院　十一病房</b> 製作</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- 適用對象 / 重要提醒 -->
+  <div class="callout">
+    <h3>給主要照顧者的話</h3>
+    <p>兒童癌症治療的成功，需要家人全程的照護，主要照顧者都應熟悉以下照護原則。本指南提供飲食照顧的建議，作為照顧孩子期間的參考；實際飲食請以醫療團隊與營養師針對孩子狀況給予的指示為準。</p>
+    <a class="phone" href="tel:0225433535,7241">📞 營養諮詢專線　(02) 2543-3535 轉 7241</a>
+  </div>
+
+  <!-- 核心原則 -->
+  <section class="summary-band">
+    <p class="h">五大核心原則</p>
+    <p class="sub">記住這五件事，就掌握了大方向</p>
+    <div class="principles">
+      <div class="pr">
+        <div class="n">1</div>
+        <h4>全熟・現做</h4>
+        <p>所有食物與調味料都要煮熟、新鮮現做，不吃生食、不吃外食。</p>
+      </div>
+      <div class="pr">
+        <div class="n">2</div>
+        <h4>新鮮・衛生</h4>
+        <p>注意保存期限、生熟食分開處理，當餐吃完、不留隔夜。</p>
+      </div>
+      <div class="pr">
+        <div class="n">3</div>
+        <h4>飲水煮沸</h4>
+        <p>所有的水一定要煮沸，瓶裝水、過濾水、開飲機的水都不行。</p>
+      </div>
+      <div class="pr">
+        <div class="n">4</div>
+        <h4>拒絕生菌</h4>
+        <p>不吃優格、養樂多等含活菌食品，也不喝蜂蜜。</p>
+      </div>
+      <div class="pr">
+        <div class="n">5</div>
+        <h4>不碰補品偏方</h4>
+        <p>不吃堅果、保健食品、中藥進補，更不可吃偏方、符水、香灰。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 圖例 -->
+  <div class="legend">
+    <span><i class="lg" style="background:var(--ok-bg);color:var(--ok);border:1px solid var(--ok-line)">✓</i> 可以食用</span>
+    <span><i class="lg" style="background:var(--warn-bg);color:var(--warn);border:1px solid var(--warn-line)">!</i> 注意事項（須符合條件）</span>
+    <span><i class="lg" style="background:var(--no-bg);color:var(--no);border:1px solid var(--no-line)">✕</i> 不可食用</span>
+  </div>
+
+  <!-- 目錄 -->
+  <nav class="toc">
+    <a href="#select">飲食選擇</a>
+    <a href="#milk">牛奶</a>
+    <a href="#cook">烹煮</a>
+    <a href="#water">飲水</a>
+    <a href="#fruit">水果</a>
+    <a href="#utensil">餐具</a>
+    <a href="#forbidden">禁食清單</a>
+    <a href="#supplement">補品・偏方</a>
+    <a href="#recovery">恢復與諮詢</a>
+  </nav>
+
+  <!-- 1 飲食選擇原則 -->
+  <section id="select">
+    <h2 class="section-title"><span class="badge">01</span>飲食選擇原則</h2>
+    <p class="section-sub">選對食物、均衡攝取，是基本功</p>
+    <div class="card">
+      <ul class="items">
+        <li class="warn"><span class="mark">!</span><div class="item-body">
+          <p class="t"><b>所有食物、調味料都要是新鮮熟食</b>，避免外食。這是飲食選擇最重要的重點。</p></div></li>
+        <li class="ok"><span class="mark">✓</span><div class="item-body">
+          <p class="t">均衡營養：每天從六大類基本食物中（五穀根莖類、奶類、蛋豆魚肉類、蔬菜類、水果類、油脂類），選吃個人所需的份量。</p>
+          <p class="note">食物的價錢與營養價值不一定成正比，應均衡攝取、盡量不要偏食。</p></div></li>
+        <li class="ok"><span class="mark">✓</span><div class="item-body">
+          <p class="t">注意食物衛生 —— 留意保存期限、烹調前的洗滌，以及烹調後的衛生。</p></div></li>
+        <li class="ok"><span class="mark">✓</span><div class="item-body">
+          <p class="t">可食用麵包店剛出爐、<b>不包餡</b>的麵包與蛋糕。</p></div></li>
+        <li class="ok"><span class="mark">✓</span><div class="item-body">
+          <p class="t">零食以小包裝、單次使用、不包餡為原則。</p></div></li>
+        <li class="warn"><span class="mark">!</span><div class="item-body">
+          <p class="t">起司需<b>烹調過</b>才可吃，如焗烤、加入麵糰烘焙或烤過的披薩。</p>
+          <p class="note"><span class="kw-no">不可</span>直接進食，也不可灑在生菜上。</p></div></li>
+        <li class="warn"><span class="mark">!</span><div class="item-body">
+          <p class="t">雞精、雞湯、魚湯無法完全提供修復身體組織所需，<b>不可只以湯品作為正餐</b>，肉類也要吃，才能得到足夠營養。</p></div></li>
+        <li class="no"><span class="mark">✕</span><div class="item-body">
+          <p class="t">避免啃咬骨頭，以及硬、尖銳或粗糙的食物，以免口腔黏膜受損。</p></div></li>
+        <li class="warn"><span class="mark">!</span><div class="item-body">
+          <p class="t">類固醇藥物會使食慾大增，應注意<b>少量多餐</b>，盡量吃高纖、有飽足感的食物，減少高油脂食物與高糖份飲料。</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 2 飲用牛奶 -->
+  <section id="milk">
+    <h2 class="section-title"><span class="badge">02</span>飲用牛奶原則</h2>
+    <div class="card">
+      <ul class="items">
+        <li class="ok"><span class="mark">✓</span><div class="item-body">
+          <p class="t">可選擇<b>已殺菌、在有效期限內、包裝完整</b>（鋁箔包、利樂皇、新鮮屋等）、一次可喝完的牛奶，如保久乳、鮮奶。</p></div></li>
+        <li class="no"><span class="mark">✕</span><div class="item-body">
+          <p class="t">不可飲用牧場現擠的鮮奶。</p></div></li>
+        <li class="warn"><span class="mark">!</span><div class="item-body">
+          <p class="t">沖泡奶粉須選擇<b>小罐裝</b>奶粉，沖泡用的開水要煮沸過。</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 3 烹煮原則 -->
+  <section id="cook">
+    <h2 class="section-title"><span class="badge">03</span>烹煮原則</h2>
+    <p class="section-sub">煮熟、煮透，並注意生熟分開</p>
+    <div class="card">
+      <ul class="items">
+        <li class="ok"><span class="mark">✓</span><div class="item-body">
+          <p class="t"><b>食物需煮熟才可吃。</b></p></div></li>
+        <li class="no"><span class="mark">✕</span><div class="item-body">
+          <p class="t">不可食用隔餐飯菜，餐廳的炒飯也不可吃。</p>
+          <p class="note">隔夜飯會滋生致命病菌。</p></div></li>
+        <li class="warn"><span class="mark">!</span><div class="item-body">
+          <p class="t">勿食帶殼類海鮮；蝦類請<b>剝殼後再烹煮</b>。</p></div></li>
+        <li class="warn"><span class="mark">!</span><div class="item-body">
+          <p class="t">蛋類建議選擇<b>洗選蛋</b>，選用外殼完整者，並在煮蛋前把蛋殼清洗乾淨。</p></div></li>
+        <li class="no"><span class="mark">✕</span><div class="item-body">
+          <p class="t">生食與熟食的砧板不可共用。</p></div></li>
+        <li class="warn"><span class="mark">!</span><div class="item-body">
+          <p class="t">豆腐須<b>烹煮後再吃</b>，不能直接食用。</p></div></li>
+        <li class="warn"><span class="mark">!</span><div class="item-body">
+          <p class="t">味噌由大豆、米麴、食鹽混合加菌類溶液熟成而來，未再殺菌，因此煮味噌湯時需<b>持續沸騰 5–10 分鐘</b>。</p></div></li>
+        <li class="warn"><span class="mark">!</span><div class="item-body">
+          <p class="t">胡椒粉、蔥、薑、蒜等調味，須與食物<b>一起煮熟後</b>才可食用。</p></div></li>
+        <li class="ok"><span class="mark">✓</span><div class="item-body">
+          <p class="t">醬油、番茄醬、米醋、蘋果醋等，製作過程已經蒸煮、發酵並再殺菌，只要保存得當，加入食物後<b>再次烹煮過</b>是可以使用的。</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 4 飲水原則 -->
+  <section id="water">
+    <h2 class="section-title"><span class="badge">04</span>飲水原則</h2>
+    <p class="section-sub">一個關鍵字：煮沸</p>
+    <div class="card">
+      <ul class="items">
+        <li class="warn"><span class="mark">!</span><div class="item-body">
+          <p class="t">飲用水一定要<b>確實煮沸</b>，不可生飲。</p></div></li>
+        <li class="no"><span class="mark">✕</span><div class="item-body">
+          <p class="t">瓶裝水、開飲機的水、過濾機的過濾水，皆不可直接飲用。</p>
+          <p class="note">開飲機無法確實將生水煮沸，不可把生水直接倒入開飲機「煮沸」飲用；過濾水也須再煮沸後，才能給病童飲用。</p></div></li>
+        <li class="warn"><span class="mark">!</span><div class="item-body">
+          <p class="t">飲料盡量<b>一次喝完</b>，放置 30 分鐘後就容易孳生細菌或黴菌。</p></div></li>
+        <li class="no"><span class="mark">✕</span><div class="item-body">
+          <p class="t">不可給病童喝泡茶，也不可用茶包沖茶飲用。</p>
+          <p class="note">茶葉內含許多細菌，僅用幾分鐘熱水是無法殺菌的。</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 5 水果選擇 -->
+  <section id="fruit">
+    <h2 class="section-title"><span class="badge">05</span>水果選擇原則</h2>
+    <p class="section-sub">選能去皮的、洗乾淨、要去皮去蒂</p>
+    <div class="card">
+      <ul class="items">
+        <li class="ok"><span class="mark">✓</span><div class="item-body">
+          <p class="t">選擇<b>可剝皮或削皮</b>的新鮮水果。</p></div></li>
+        <li class="warn"><span class="mark">!</span><div class="item-body">
+          <p class="t">水果須以<b>煮沸過的開水</b>清洗乾淨，才可食用。</p></div></li>
+        <li class="ok"><span class="mark">✓</span><div class="item-body">
+          <p class="t">優先選果皮容易處理、農藥污染與病源感染機會較少者，如橘子、柳丁、番茄、蘋果、香蕉、木瓜等，並<b>去皮去蒂</b>。</p></div></li>
+        <li class="no"><span class="mark">✕</span><div class="item-body">
+          <p class="t"><b>葡萄柚禁止食用</b> —— 容易影響藥物的治療效果。</p></div></li>
+        <li class="warn"><span class="mark">!</span><div class="item-body">
+          <p class="t">奇異果、火龍果等外觀不平整或多毛的水果，須以<b>削皮</b>方式去除果皮。</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 6 餐具選擇 -->
+  <section id="utensil">
+    <h2 class="section-title"><span class="badge">06</span>餐具的選擇</h2>
+    <div class="card">
+      <ul class="items">
+        <li class="ok"><span class="mark">✓</span><div class="item-body">
+          <p class="t">使用的餐具須清潔、乾淨。</p></div></li>
+        <li class="ok"><span class="mark">✓</span><div class="item-body">
+          <p class="t">買外食請<b>自備不鏽鋼容器</b>，不要用店家的餐具（塑膠袋、便當盒（紙盒、保麗龍）、筷子、湯匙），以減少細菌與黴菌感染的機會。</p></div></li>
+        <li class="ok"><span class="mark">✓</span><div class="item-body">
+          <p class="t">吸管請選用單包裝。</p></div></li>
+        <li class="warn"><span class="mark">!</span><div class="item-body">
+          <p class="t">把手洗乾淨再拿食物，比戴塑膠手套更好。</p>
+          <p class="note">手套從工廠製作到使用、保存過程中，可能附著看不見的黴菌。</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 7 禁食清單 -->
+  <section id="forbidden" class="danger-zone">
+    <h2 class="section-title"><span class="badge" style="background:linear-gradient(135deg,#c0392b,#e05a4a);box-shadow:0 4px 12px rgba(192,57,43,.3)">07</span>哪些食物不能吃？</h2>
+    <p class="section-sub">這份清單上的食物，治療期間請一律避免</p>
+    <div class="card">
+      <ul class="items">
+        <li class="no"><span class="mark">✕</span><div class="item-body">
+          <p class="t">煙燻或醃漬物。</p></div></li>
+        <li class="no"><span class="mark">✕</span><div class="item-body">
+          <p class="t"><b>含生菌（活菌）的乳製品與飲料</b>，如養樂多、優格、優酪乳、含菌配方奶粉等。</p></div></li>
+        <li class="no"><span class="mark">✕</span><div class="item-body">
+          <p class="t"><b>各種生食</b>：生菜、生魚片、未全熟的牛肉、生蠔、生雞蛋，以及未烹調過的熱狗、培根、火腿等，以免病菌感染。</p></div></li>
+        <li class="no"><span class="mark">✕</span><div class="item-body">
+          <p class="t">有夾心、餡料的餅乾。</p></div></li>
+        <li class="no"><span class="mark">✕</span><div class="item-body">
+          <p class="t">販售的烤番薯、茶葉蛋、關東煮、甜不辣、燒烤，小吃攤的滷味，以及包餡點心如餡餅、包子、小籠包。</p></div></li>
+        <li class="no"><span class="mark">✕</span><div class="item-body">
+          <p class="t">速食店、餐廳的醬料包。</p></div></li>
+        <li class="no"><span class="mark">✕</span><div class="item-body">
+          <p class="t">蜂蜜（可能含有肉毒桿菌）—— 對抵抗力較弱的病童，容易引起腸胃不適甚至感染。</p></div></li>
+        <li class="no"><span class="mark">✕</span><div class="item-body">
+          <p class="t">堅果類，如花生、核桃、腰果、開心果，以及水果乾。</p></div></li>
+        <li class="no"><span class="mark">✕</span><div class="item-body">
+          <p class="t">奶昔、霜淇淋 —— 原料倒入機器混合攪拌後直接販售，未再殺菌，且機器有清洗衛生疑慮。</p></div></li>
+        <li class="no"><span class="mark">✕</span><div class="item-body">
+          <p class="t">冰棒、冰沙、剉冰 —— 製作過程未經殺菌，使用的水質也可能含有大腸桿菌。</p></div></li>
+        <li class="no"><span class="mark">✕</span><div class="item-body">
+          <p class="t">罐頭食物。</p></div></li>
+        <li class="warn"><span class="mark">!</span><div class="item-body">
+          <p class="t">刺激性食物（辣椒、咖啡，或太酸太辣的東西）應<b>少吃</b>。</p></div></li>
+        <li class="warn"><span class="mark">!</span><div class="item-body">
+          <p class="t">菇類請<b>洗淨、去蒂後再煮熟</b>食用。</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 8 補品偏方 -->
+  <section id="supplement">
+    <h2 class="section-title"><span class="badge" style="background:linear-gradient(135deg,#c0392b,#e05a4a);box-shadow:0 4px 12px rgba(192,57,43,.3)">08</span>補品？偏方？</h2>
+    <div class="card">
+      <ul class="items">
+        <li class="no"><span class="mark">✕</span><div class="item-body">
+          <p class="t">含益生菌的食物（如表飛鳴、LP33 等），也<b>不建議</b>額外補充綜合維他命。</p></div></li>
+        <li class="no"><span class="mark">✕</span><div class="item-body">
+          <p class="t">不吃中藥進補。</p></div></li>
+        <li class="warn"><span class="mark">!</span><div class="item-body">
+          <p class="t">不必特意補充「高蛋白」、「高營養」的營養品 —— 滲透壓高，可能加重化療後腸胃及腎臟的負擔。</p>
+          <p class="note">營養師會視個別營養狀況給予建議。</p></div></li>
+        <li class="no"><span class="mark">✕</span><div class="item-body">
+          <p class="t">勿聽信偏方或靈丹，因成分不明、製作過程也不清楚。</p></div></li>
+      </ul>
+    </div>
+
+    <div class="alert">
+      <span class="tag">⚠ 絕對禁止・攸關性命</span>
+      <h4>絕對不可以吃符水或香灰</h4>
+      <p>可能感染毒性超強的細菌或黴菌，導致<b>腸潰爛、腸穿孔、敗血症，甚至死亡</b>。請務必避免。</p>
+    </div>
+  </section>
+
+  <!-- 恢復與諮詢 -->
+  <section id="recovery">
+    <div class="recovery">
+      <h3>療程結束之後</h3>
+      <p>全部療程完成後，依醫師指示，約 <b>1–3 個月</b>可逐漸恢復一般飲食。</p>
+      <p>期待以上資料能提供您更多照顧訊息，讓孩子在治療過程中擁有良好的生活品質。任何飲食上的疑問，歡迎隨時聯繫營養師。</p>
+      <a class="contact" href="tel:0225433535,7241">📞 諮詢專線　(02) 2543-3535 轉 7241</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p class="care">～ 馬偕兒童醫院　十一病房全體　關心您的孩子 ～</p>
+  <small>本衛教資料僅供參考，實際飲食請依照醫療團隊與營養師的個別指示。</small>
+  <br>
+  <a class="top-link" href="#top">↑ 回到頂端</a>
+</footer>
+
+<script>
+  /* 讓目錄與「回到頂端」在 iframe／Google Sites 沙箱中也能穩定跳轉
+     （原生 #錨點 在內嵌情境常失效，改用 scrollIntoView） */
+  (function () {
+    var prefersReduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.addEventListener('click', function (e) {
+      var link = e.target && e.target.closest ? e.target.closest('a[href^="#"]') : null;
+      if (!link) return;
+      var id = link.getAttribute('href').slice(1);
+      if (!id) return;
+      var target = document.getElementById(id);
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: prefersReduce ? 'auto' : 'smooth', block: 'start' });
+      if (window.history && history.replaceState) { history.replaceState(null, '', '#' + id); }
+    });
+  })();
+</script>
+
+</body>
+</html>
