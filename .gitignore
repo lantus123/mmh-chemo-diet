@@ -1,0 +1,5 @@
+.DS_Store
+# 本機預覽截圖，非網站內容
+preview-*.webp
+preview-*.png
+preview-*.jpg
